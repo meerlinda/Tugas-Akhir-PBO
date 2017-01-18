@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportBarang" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbl_barang.`KodeBarang` AS tbl_barang_KodeBarang,
+     tbl_barang.`NamaBarang` AS tbl_barang_NamaBarang,
+     tbl_barang.`JenisBarang` AS tbl_barang_JenisBarang,
+     tbl_barang.`StokBarang` AS tbl_barang_StokBarang,
+     tbl_barang.`HargaSatuan` AS tbl_barang_HargaSatuan
+FROM
+     `tbl_barang` tbl_barang]]>
+	</queryString>
+	<field name="tbl_barang_KodeBarang" class="java.lang.Integer"/>
+	<field name="tbl_barang_NamaBarang" class="java.lang.String"/>
+	<field name="tbl_barang_JenisBarang" class="java.lang.String"/>
+	<field name="tbl_barang_StokBarang" class="java.lang.Integer"/>
+	<field name="tbl_barang_HargaSatuan" class="java.lang.Integer"/>
+	<variable name="tbl_barang_NamaBarang_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{tbl_barang_NamaBarang}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="148" y="9" width="267" height="26"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="20"/>
+				</textElement>
+				<text><![CDATA[Data Barang Apotek "99"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="35" width="323" height="16"/>
+				<textElement>
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Jalan Sri Bungur Tanjung Bintang Lampung Selatan Lampung 35361]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="51" width="182" height="16"/>
+				<textElement>
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Telp 0721-350350, HP 082123456789]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="8" width="62" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Kode Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="8" width="169" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="8" width="88" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Jenis Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="8" width="64" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Stok Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="8" width="68" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Harga Barang]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="5" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="26" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="4" width="62" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{tbl_barang_KodeBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="4" width="169" height="20"/>
+				<textElement>
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbl_barang_NamaBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="4" width="88" height="20"/>
+				<textElement>
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbl_barang_JenisBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="4" width="64" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{tbl_barang_StokBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="4" width="68" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{tbl_barang_HargaSatuan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="90" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="3" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="478" y="39" width="26" height="18"/>
+				<textElement>
+					<font fontName="Segoe Marker" size="13"/>
+				</textElement>
+				<text><![CDATA[Ttd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="67" width="95" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe Marker" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Owner Apotek "99"]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
